@@ -2,8 +2,8 @@
 Changelog for package pick_ik
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2026-08-03)
+------------------
 * Migrate from tl_expected to libexpected-dev system package (`#81 <https://github.com/PickNikRobotics/pick_ik/issues/81>`_)
   ``cpp_polyfills`` 2.0 dropped its ``tl_expected`` sub-package, so the
   ``tl_expected`` rosdep key no longer resolves on Ubuntu Resolute. Depend on
