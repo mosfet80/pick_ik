@@ -2,6 +2,24 @@
 Changelog for package pick_ik
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Migrate from tl_expected to libexpected-dev system package (`#81 <https://github.com/PickNikRobotics/pick_ik/issues/81>`_)
+  ``cpp_polyfills`` 2.0 dropped its ``tl_expected`` sub-package, so the
+  ``tl_expected`` rosdep key no longer resolves on Ubuntu Resolute. Depend on
+  ``libexpected-dev`` instead, which is available on jammy, noble and resolute
+  alike. Required for lyrical and rolling.
+* Rolling/lyrical: tf2 .hpp header renames + pick_ik include prefix (`#82 <https://github.com/PickNikRobotics/pick_ik/issues/82>`_)
+* ci: switch from custom-container CI to industrial_ci (`#83 <https://github.com/PickNikRobotics/pick_ik/issues/83>`_)
+  The pre-baked CI container was frozen at its 2023-12 build and its weekly
+  rebuild had been failing and then auto-disabled, so every PR for the past two
+  years was tested against an environment that no longer exists. industrial_ci
+  installs dependencies fresh per run and follows each distro's current base OS,
+  matching the buildfarm and the rest of the MoveIt/PickNik release matrix.
+  Rolling now builds against ``ros2-testing`` on Resolute, and ``git`` is
+  declared as a ``test_depend`` for the Catch2 ``FetchContent`` step.
+* Contributors: LarsNobleo, Nathan Brooks
+
 1.1.2 (2026-06-26)
 ------------------
 * Adds header file for pick_ik_plugin (`#79 <https://github.com/PickNikRobotics/pick_ik/issues/79>`_)
